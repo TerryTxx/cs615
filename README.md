@@ -21,13 +21,8 @@ Open command line and apply that steps:
   or nvm install v16.14.2
 
 3. Step
- cd server
- npm install
- npm run start
- 
- cd client
- npm install
- npm run start
+npm run install-deps
+npm start
  
 4. Step
  You can start working on any explorer window.
@@ -36,7 +31,7 @@ Open command line and apply that steps:
 
 HTTP Request
 ----------
-http://localhost:3000/
+http://localhost:3001/
 
 | Route | HTTP Verb	 | POST body	                                                                                                                                                | Description	 |
 | --- | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------| --- |
