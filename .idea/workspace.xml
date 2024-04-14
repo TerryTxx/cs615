@@ -7,7 +7,6 @@
     <list default="true" id="4e302e4a-60f6-4f19-985d-382b8ab2af24" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +119,7 @@
       <workItem from="1713095340489" duration="589000" />
       <workItem from="1713096504287" duration="2521000" />
       <workItem from="1713099034773" duration="5183000" />
-      <workItem from="1713104499467" duration="3903000" />
+      <workItem from="1713104499467" duration="4373000" />
     </task>
     <servers />
   </component>
