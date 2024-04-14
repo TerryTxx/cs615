@@ -13,14 +13,14 @@ export default class Story extends Component{
                             <div className="mcell-title story">
                             <b className="fas fa-lightbulb"/> Backlog
                                 <Tooltips id="1" content="You can do what you want to do with this column" placement="top" storyType={this.props.storyType}/>
-                            </div>
+                            </div> // Renders tasks filtered by ID "1" (Backlog) within the Backlog column.
                                 <Task tasks={this.props.tasks} loading={this.props.loading} filter="1"/>
                           </div>
                           <div className="col-sm mcell mcolor2">
                               <div className="mcell-title story">
                               <b className="fas fa-bars"/> TODO
                                 <Tooltips id="2" content="You can do what you want to do with this column" placement="top" storyType={this.props.storyType}/>
-                              </div>
+                              </div> // Renders tasks filtered by ID "2" (TODO) within the TODO column.
                               <Task tasks={this.props.tasks} loading={this.props.loading} filter="2"/>
                           </div>
                           
