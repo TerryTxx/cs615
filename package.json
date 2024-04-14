@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "concurrently \"cd client && npm build\" \"cd server && npm build\"",
-    "install": "(cd client && npm) && (cd server && npm)",
-    "start": "concurrently \"cd client && PORT=3200 npm start\" \"cd server && PORT=3101 npm start\"",
-    "start:prod": "cd server && npm start:prod"
+    "build": "concurrently \"npm run build --prefix client\" \"npm run build --prefix server\"",
+    "install-deps": "npm install --prefix client && npm install --prefix server",
+    "start": "concurrently \"npm run start --prefix client -- PORT=3001\" \"npm run start --prefix server -- PORT=3000\""
   },
   "dependencies": {
     "concurrently": "^3.5.1",
