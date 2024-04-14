@@ -1,10 +1,5 @@
 # Group Task Management
 
-[![Version][npm-image]][npm-url] [![Version][npm-passing-image]][npm-passing-url]
-
-
-Scrum Masters can create tasks for employees in this project.
-
 This project powered by React.JS and Express.
 
 Get Started
