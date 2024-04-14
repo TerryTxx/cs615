@@ -8,7 +8,7 @@
     "start": "concurrently \"cd client && PORT=3001 npm run start\" \"cd server && PORT=3000 npm run start\""
   },
   "engines": {
-    "node": "16.x"
+    "node": "16.4.2"
   },
   "dependencies": {
     "debug": "^4.1.1",
