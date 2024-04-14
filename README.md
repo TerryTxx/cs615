@@ -1,4 +1,4 @@
-# Scrum & Agile Task Management
+# Group Task Management
 
 [![Version][npm-image]][npm-url] [![Version][npm-passing-image]][npm-passing-url]
 
