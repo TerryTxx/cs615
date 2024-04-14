@@ -109,7 +109,7 @@ class Dashboard extends Component{
         return(
             <div>
               <div className="side">
-                <span className="logo">Scrum Beta</span>
+                <span className="logo">CS615 Group2</span>
                 <ul className="side-menu">
                   {storyTable}
                 </ul>

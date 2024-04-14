@@ -5,7 +5,7 @@ import About from './components/about';
 import User from './components/user';
 const IndexPage = () => {
 
-    return <div>Welcome to TaskHandler<br/><a href="/story/1">Homepage</a></div>
+    return <div>Welcom to TaskHandler<br/><a href="/story/1">Homepage</a></div>
 }
 const NotFoundPage = () => {
 

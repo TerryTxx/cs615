@@ -21,7 +21,7 @@ class LoginComponent extends Component {
         const { username, password, rememberMe } = this.state;
         return (
             <form onSubmit={this.handleLogin} >
-                <h2 style={{marginBottom:'40px'}}>Welcome to Scrum Master</h2>
+                <h2 style={{marginBottom:'40px'}}>Welcome to TaskHanlder</h2>
                 <div className="input-container">
                     <input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
                 </div>
