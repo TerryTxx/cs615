@@ -1,0 +1,130 @@
+
+
+.login-container {
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .login-form {
+    background-color: #b9b7b7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+
+  .input-container {
+    margin-bottom: 30px;
+  }
+
+  input[type='text'],
+  input[type='password'] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+  }
+
+  .checkbox-container {
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    background-color: #5086c0;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .button-container{
+    text-align: center;
+  }
+
+  button:hover {
+    background-color: #6398d1;
+  }
+
+  .extra-links {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .extra-links a {
+    color: #497cb1;
+    text-decoration: none;
+  }
+
+  .extra-links a:hover {
+    text-decoration: underline;
+  }
+
+  .signup-form {
+    margin-top: 20px;
+  }
+
+  .signup-form h2 {
+    margin-bottom: 15px;
+  }
+
+  .signup-form .input-container {
+    width: 300px;
+    margin-bottom: 15px;
+  }
+
+  .signup-form input[type="text"],
+  .signup-form input[type="password"],
+  .signup-form input[type="email"] {
+    width: 80%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .signup-form .button-container {
+    margin-top: 20px;
+  }
+
+  .signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c90c9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .signup-form button:hover {
+    background-color: #5285bc;
+  }
+  .image-container {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 600px; /* Adjust width as needed */
+    height: 600px;
+
+  }
+
+  .image-container img {
+    position:absolute;
+    margin-top: 110px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 380px;
+     /* Maintain aspect ratio */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+  }
+
+
+
