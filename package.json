@@ -1,14 +1,13 @@
 {
-  "name": "react-backend",
+  "name": "global",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "concurrently \"npm run build --prefix client\" \"npm run build --prefix server\"",
-    "install-deps": "npm install --prefix client && npm install --prefix server",
-    "start": "concurrently \"npm run start --prefix client -- PORT=3001\" \"npm run start --prefix server -- PORT=3000\""
+    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
+    "install-deps": "(cd client && npm install) && (cd server && npm install)",
+    "start": "concurrently \"cd client && PORT=3001 npm run start\" \"cd server && PORT=3000 npm run start\""
   },
   "dependencies": {
-    "concurrently": "^3.5.1",
     "debug": "^4.1.1",
     "express": "^4.16.4",
     "http-errors": "^1.7.1",
@@ -16,5 +15,8 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
