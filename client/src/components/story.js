@@ -14,10 +14,10 @@ export default class Story extends Component{
                             <b className="fas fa-lightbulb"/> Backlog
                                 <Tooltips id="1" content="You can do what you want to do with this column" placement="top" storyType={this.props.storyType}/>
                             </div> // Renders tasks filtered by ID "1" (Backlog) within the Backlog column.
-                                <Task tasks={this.props.tasks} loading={this.props.loading} filter="1"/>
+                                <Task tasks={this.props.tasks} loading={this.props.loading} filter="1"/> // Retrieves the title of the first story from props, or displays "Loading..." if no story is available.
                           </div>
                           <div className="col-sm mcell mcolor2">
-                              <div className="mcell-title story">
+                              <div className="mcell-title story"> // Displays the TODO column with an icon and tooltip for additional information.
                               <b className="fas fa-bars"/> TODO
                                 <Tooltips id="2" content="You can do what you want to do with this column" placement="top" storyType={this.props.storyType}/>
                               </div> // Renders tasks filtered by ID "2" (TODO) within the TODO column.
