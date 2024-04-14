@@ -14,9 +14,9 @@
     "mongoose": "^5.4.11",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "concurrently": "^8.2.2"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
   }
 }
