@@ -9,7 +9,7 @@ Get Started
 Open command line and apply that steps:
 
 1. Step
- git clone https://github.com/TerryTxx?tab=stars
+ git clone https://github.com/TerryTxx/cs615
  
 2. Step
     for windows download nvm-install

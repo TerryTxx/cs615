@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
+    "build": "concurrently \"cd client && npm run build\"",
     "install-deps": "npm install && (cd client && npm install) && (cd server && npm install)",
     "start": "concurrently \"cd client && PORT=3001 npm run start\" \"cd server && PORT=3000 npm run start\""
   },
