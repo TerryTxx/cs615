@@ -11,7 +11,7 @@ class Header extends Component{
                       <ul>
                       <Link to="/story/1" activeClassName="active"><li><i className="fas fa-folder-open"></i><span className="mainMenuText">Projects</span></li></Link>
                       <Link to="/about" activeClassName="active"><li><i className="fas fa-thumbs-up"/><span className="mainMenuText">About</span></li></Link>
-                      <a rel="noopener noreferrer" target="_blank" href="https://github.com/TerryTxx?tab=stars"><li><i className="fas fa-code-branch"/><span className="mainMenuText">Fork Us on Github</span></li></a>
+                      <a rel="noopener noreferrer" target="_blank" href="https://github.com/TerryTxx/cs615"><li><i className="fas fa-code-branch"/><span className="mainMenuText">Fork Us on Github</span></li></a>
                       </ul>
                     </div>
                     <div className="profilewidget">
