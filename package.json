@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
-    "install-deps": "(cd client && npm install) && (cd server && npm install)",
+    "install-deps": "npm install && (cd client && npm install) && (cd server && npm install)",
     "start": "concurrently \"cd client && PORT=3001 npm run start\" \"cd server && PORT=3000 npm run start\""
   },
   "dependencies": {
@@ -14,7 +14,9 @@
     "mongoose": "^5.4.11",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
-    "pug": "^2.0.3",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
     "concurrently": "^8.2.2"
   }
 }
