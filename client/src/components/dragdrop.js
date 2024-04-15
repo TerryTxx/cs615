@@ -13,6 +13,6 @@ $(".mcell").droppable({
   activeClass: "ui-state-default", // CSS class applied when an accepted element is dragged over
   hoverClass: "ui-state-hover", // CSS class applied when an accepted element is hovered over
   drop: function(event, ui) {        
-      $(this).append($(ui.draggable));
+      $(this).append($(ui.draggable)); // Append the dragged element to the droppable element
   }
 });
