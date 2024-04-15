@@ -34,7 +34,7 @@ export default class Story extends Component{
                               <div className="mcell-title story">
                               <b className="fas fa-check"/> Done
                                 <Tooltips id="4" content="You can do what you want to do with this column" placement="top" storyType={this.props.storyType}/>                              </div>
-                              <Task tasks={this.props.tasks} loading={this.props.loading} filter="4"/>
+                              <Task tasks={this.props.tasks} loading={this.props.loading} filter="4"/> //This component represents a Task component with props passed to it
                             </div>
                         </div>
                       </div>
