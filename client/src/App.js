@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Dashboard from './components/dashboard'
 
 class App extends Component {
-  render() {
+  render() {  // This renders the main App component
     return (
       <div className="App">
-       <Dashboard/>
+       <Dashboard/> // This renders the Dashboard component
       </div>
     );
   }
