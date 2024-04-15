@@ -8,8 +8,8 @@ $(".mcell-task").draggable({
 
 });
 $(".mcell").droppable({
-  tolerance: "intersect",
-  accept: ".mcell-task",
+  tolerance: "intersect", // Define the tolerance for dropping elements
+  accept: ".mcell-task",// Specify the draggable elements accepted by this droppable
   activeClass: "ui-state-default",
   hoverClass: "ui-state-hover",
   drop: function(event, ui) {        
