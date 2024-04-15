@@ -10,8 +10,8 @@ $(".mcell-task").draggable({
 $(".mcell").droppable({
   tolerance: "intersect", // Define the tolerance for dropping elements
   accept: ".mcell-task",// Specify the draggable elements accepted by this droppable
-  activeClass: "ui-state-default",
-  hoverClass: "ui-state-hover",
+  activeClass: "ui-state-default", // CSS class applied when an accepted element is dragged over
+  hoverClass: "ui-state-hover", // CSS class applied when an accepted element is hovered over
   drop: function(event, ui) {        
       $(this).append($(ui.draggable));
   }
