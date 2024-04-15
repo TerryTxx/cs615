@@ -22,15 +22,16 @@ class Dashboard extends Component{
 
     this.getData = this.getData.bind(this)
   }
-
+// Load story details and task data when the component mounts
   componentDidMount = ()=>{
     this.getStoryDetails();
     this.getData();
+    // Refresh task data periodically
     setInterval(() => {
       this.getData();
   }, 2000);
   }
-
+// Function to fetch story details from the server
   getStoryDetails = () => {
     axios.get(`/story`)
     .then((r)=> {
@@ -52,10 +53,11 @@ class Dashboard extends Component{
     })
 
   }
+  // Function to fetch task data from the server
   getData = () => {
-      const token = localStorage.getItem('token'); // 从本地存储获取 token
+      const token = localStorage.getItem('token'); // Get token from local storage
       const headers = {
-          Authorization: `Bearer ${token}` // 设置 Authorization 头部
+          Authorization: `Bearer ${token}` // Set Authorization header
       };
 
       axios.get(`/tasks`,{headers})
@@ -89,6 +91,7 @@ class Dashboard extends Component{
     render(){
       let {stories,loadingStory} = this.state;
       let storyTable;
+      // Render story list
       if(!loadingStory)
       storyTable = stories.map((story,index)=>{
         return(

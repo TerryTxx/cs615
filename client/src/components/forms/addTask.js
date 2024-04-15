@@ -26,6 +26,7 @@ class AddModal extends React.Component {
     moment.locale('tr');
     this.changeColumnTitle()
   }
+  // Function to set locale and initial column title
   changeColumnTitle = number=>{
     let newTitle;
     if(number==="1")
@@ -39,12 +40,14 @@ class AddModal extends React.Component {
 
     return newTitle;
   }
+  // Function to handle input change
   handleInput(e) {
      this.setState({
       [e.target.name]: e.target.value
      })
      console.log(this.state.dueDate)
 }
+// Function to get users from the server
 getUsers(){
   axios.get('/users')
   .then((r)=> {
@@ -62,10 +65,11 @@ getUsers(){
       })
   })
 }
+// Function to handle click event on add button
   handleClick = event => {
-      const token = localStorage.getItem('token'); // 从本地存储获取 token
+      const token = localStorage.getItem('token'); // Get token from local storage
       const headers = {
-          Authorization: `Bearer ${token}` // 设置 Authorization 头部
+          Authorization: `Bearer ${token}` // Set Authorization header
       };
       console.log(headers)
     axios.post('/tasks', {
@@ -98,6 +102,7 @@ getUsers(){
     });
 
   }
+  // Function to toggle modal and get users
   toggle() {
     this.getUsers();
     this.setState({
@@ -146,9 +151,9 @@ getUsers(){
             </Input>
           </FormGroup>
               <hr/>
-              <i className="fas fa-calendar-alt"></i> Created Date: {moment().format('L, h:mm:ss')} <br/>
+              <i className="fas fa-calendar-alt"></i> Created Date: {moment().format('L, h:mm:ss')} <br/> 
               <i className="fas fa-clock"></i> Due Date: <input name="dueDate" id="dueDate" type="datetime-local" onChange={this.handleInput.bind(this)}/>
-          </ModalBody>
+          </ModalBody>  
           <ModalFooter>
             <Button color="primary" onClick={this.handleClick.bind(this)}><i className="fas fa-plus-circle"></i> Add</Button>
             <Button color="secondary" onClick={this.toggle}><i className="fas fa-times-circle"></i> Close</Button>
