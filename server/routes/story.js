@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const authenticateToken = require('../jwt')
-
+const authenticateToken = require('../jwt');
 const Story = require('../models/Story');
 
-// 获取不同状态的故事计数
+// Get the count of stories by status
 router.get('/count', async (req, res, next) => {
   try {
     const count = await Story.aggregate([
       {
         $group: {
           _id: '$status',
-          count: {$sum: 1}
+          count: { $sum: 1 }
         }
       }
     ]);
@@ -21,27 +20,27 @@ router.get('/count', async (req, res, next) => {
   }
 });
 
-// 创建新故事
-router.post('/',authenticateToken, async (req, res, next) => {
+// Create a new story
+router.post('/', authenticateToken, async (req, res, next) => {
   try {
     const story = new Story({
       ...req.body,
       createdBy: req.user.id
     });
     const data = await story.save();
-    res.json(data);
+    res.status(201).json(data);
   } catch (err) {
-    console.log(err)
-    next({message: 'Story not found', code: '0'});
+    console.error(err); // Changed to console.error for better error logging
+    next({ message: 'Error creating story', code: '0' }); // More descriptive error message
   }
 });
 
-// 获取所有故事
+// Get all stories
 router.get('/', async (req, res, next) => {
   try {
     const data = await Story.find({});
     if (!data || data.length === 0) {
-      return next({message: 'no data', code: 5});
+      return next({ message: 'No stories available', code: 5 }); // More descriptive message
     }
     res.json(data);
   } catch (err) {
@@ -49,14 +48,14 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// 删除故事
+// Delete a story by ID
 router.delete('/delete/:id', async (req, res, next) => {
   try {
     const result = await Story.findByIdAndRemove(req.params.id);
     if (!result) {
-      return res.json({status: '0'}); // 如果已被删除，则返回0
+      return res.status(404).json({ message: 'Story not found' }); // Changed to 404 status with a descriptive message
     }
-    res.json({status: '1'});
+    res.status(200).json({ message: 'Story deleted successfully' }); // Added success message
   } catch (err) {
     next(err);
   }
