@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 
+// Define the ScrumUser schema
 const ScrumUserSchema = new Schema({
     fullName: {
         type: String,
@@ -14,7 +15,9 @@ const ScrumUserSchema = new Schema({
     },
     password: {
         type: String,
-        required: [true, "Password is required"]
+        required: [true, "Password is required"],
+        // Hash password before saving
+        set: password => bcrypt.hashSync(password, bcrypt.genSaltSync(10))
     },
     email: {
         type: String,
@@ -28,6 +31,5 @@ const ScrumUserSchema = new Schema({
     }
 });
 
-
-
+// Export the ScrumUser model
 module.exports = mongoose.model('ScrumUser', ScrumUserSchema);
