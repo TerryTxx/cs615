@@ -17,18 +17,22 @@ class About extends Component{
                         <div className="padding21">@Felicita Florence Clement</div>
                         <div className="padding21">@Steffi Evangeline Banans</div>
                     </div>
-                  </aside>
-                  <div class="col-sm aboutUs">
-        <h2 class="mcell-title story">Our Mission</h2>
-        <div class="padding21">Empower teams to achieve their full potential by providing a seamless and intuitive platform for collaboration</div>
-        <div class="padding21">we aim to redefine the way teams collaborate and unlock new levels of efficiency and success in the modern workplace.</div>
-        <div class="padding21"><h2>Unleash Team Synergy, One Task at a Time.</h2></div>
-    </div>
+                    <div className="mission-statement">
+                <h3>Mission Statement</h3>
+                <p>
+                    Our mission is to provide a collaborative task tool that empowers teams
+                     to efficiently organize, track, and complete tasks,
+                      fostering productivity and teamwork.
+                </p>
+
+                <h3>Teamwork Starts Here !!</h3>
             </div>
+                    
+                  </aside>
 
-
+                  
+            </div>
         )
-
     }
 }
 export default About
