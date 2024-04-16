@@ -26,7 +26,7 @@ class Tooltips extends Component {
           {this.props.content}
         </Tooltip>
         
-        <AddTask storyType={this.props.storyType} status={this.props.id}/>
+        <AddTask storyType={this.props.storyType} status={this.props.id}/> //storyType
       </span>
     );
   }
