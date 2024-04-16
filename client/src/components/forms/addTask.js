@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Input,FormGroup,Label } from 'reactstrap';
-import moment from 'moment'
-import axios from 'axios'
+import moment from 'moment' // Importing moment library for date manipulation
+import axios from 'axios' // Importing axios for making HTTP requests
+
 
 class AddModal extends React.Component {
   constructor(props) {
     super(props);
+      // Initialize component state
     this.state = {
       modal: false,
       title:'',
@@ -17,16 +19,15 @@ class AddModal extends React.Component {
       color:'',
       storyId:this.props.storyType,
       loading:false,
-      users:[]
+      users:[] // Array to store users fetched from the server
     };
-
+      // Bind toggle method
     this.toggle = this.toggle.bind(this);
   }
   componentDidMount(){
-    moment.locale('tr');
-    this.changeColumnTitle()
+    moment.locale('tr'); // Set moment locale to Turkish
+    this.changeColumnTitle() // Fetch users from the server
   }
-  // Function to set locale and initial column title
   changeColumnTitle = number=>{
     let newTitle;
     if(number==="1")
@@ -40,17 +41,17 @@ class AddModal extends React.Component {
 
     return newTitle;
   }
-  // Function to handle input change
   handleInput(e) {
      this.setState({
       [e.target.name]: e.target.value
      })
      console.log(this.state.dueDate)
 }
-// Function to get users from the server
+// Method to fetch users from the server
 getUsers(){
   axios.get('/users')
   .then((r)=> {
+      // Update state with fetched users
       this.setState({
           users: r.data,
           err:''
@@ -65,13 +66,14 @@ getUsers(){
       })
   })
 }
-// Function to handle click event on add button
+    // Method to handle click event for adding a task
   handleClick = event => {
-      const token = localStorage.getItem('token'); // Get token from local storage
+      const token = localStorage.getItem('token'); // Retrieve token from local storage
       const headers = {
           Authorization: `Bearer ${token}` // Set Authorization header
       };
       console.log(headers)
+      // Make POST request to add a task
     axios.post('/tasks', {
       title:this.state.title,
       content:this.state.content,
@@ -84,9 +86,10 @@ getUsers(){
     },{ headers: headers })
     .then((response)=> {
       if(response.data.message)
-        alert(response.data.message)
+        alert(response.data.message) // Show success message if any
       else{
-        this.toggle();
+        this.toggle(); // Close modal
+          // Reset input fields and loading state
         this.setState({
           title:null,
           content:null,
@@ -102,14 +105,14 @@ getUsers(){
     });
 
   }
-  // Function to toggle modal and get users
+    // Method to toggle modal visibility
   toggle() {
     this.getUsers();
     this.setState({
       modal: !this.state.modal
     });
   }
-
+    // Render user options
   render() {
     const {users} = this.state;
     let userContent;
@@ -151,9 +154,9 @@ getUsers(){
             </Input>
           </FormGroup>
               <hr/>
-              <i className="fas fa-calendar-alt"></i> Created Date: {moment().format('L, h:mm:ss')} <br/> 
+              <i className="fas fa-calendar-alt"></i> Created Date: {moment().format('L, h:mm:ss')} <br/>
               <i className="fas fa-clock"></i> Due Date: <input name="dueDate" id="dueDate" type="datetime-local" onChange={this.handleInput.bind(this)}/>
-          </ModalBody>  
+          </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.handleClick.bind(this)}><i className="fas fa-plus-circle"></i> Add</Button>
             <Button color="secondary" onClick={this.toggle}><i className="fas fa-times-circle"></i> Close</Button>

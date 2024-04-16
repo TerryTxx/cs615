@@ -2,9 +2,12 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Input,FormGroup,Label } from 'reactstrap';
 import moment from 'moment'
 import axios from 'axios'
+
+// ModalExample component
 class ModalExample extends React.Component {
   constructor(props) {
     super(props);
+    // Initialize state
     this.state = {
       modal: false,
       title:this.props.propContent.title,
@@ -12,15 +15,18 @@ class ModalExample extends React.Component {
       status:this.props.propContent.status,
       color:this.props.propContent.color
     };
-
+    // Bind toggle method
     this.toggle = this.toggle.bind(this);
   }
+
+  // Handle input change
   handleInput(e) { 
     this.setState({
      [e.target.name]: e.target.value
     })
     console.log(this.state.title)
 }
+  // Handle click event
 handleClick = id => {
   axios.put(`/tasks/update/${id}`, {
     title:this.state.title,
@@ -45,13 +51,15 @@ handleClick = id => {
   });
   
 }
+  // Toggle modal visibility
   toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
-
+// Render component
   render() {
+    // Destructuring props and state
       let {title,content,status} = this.state;
       const {propContent,classType} = this.props;
     return (

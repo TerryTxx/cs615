@@ -1,31 +1,33 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Input,FormGroup,Label } from 'reactstrap';
-import axios from 'axios'
+import axios from 'axios'  // Importing axios for making HTTP requests
 
 class AddUser extends React.Component {
   constructor(props) {
     super(props);
+    // Initialize component state
     this.state = {
       modal: false,
       username:'',
       name:'',
       lastname:'',
-      profilePhoto:'643ad95561e62835738acf4e',
+      profilePhoto:'643ad95561e62835738acf4e', // Default profile photo ID
       loading:false
     };
-    
+    // Bind toggle method
     this.toggle = this.toggle.bind(this);
   }
   handleChange = event => {
     this.setState({ name: event.target.value });
   }
+  // Method to handle input change
   handleInput(e) {
      this.setState({
       [e.target.name]: e.target.value
      })
      console.log(this.state.dueDate)
 }
-
+  // Method to handle click event for adding a user
   handleClick = event => {
     
     axios.post('/users', {
@@ -36,9 +38,10 @@ class AddUser extends React.Component {
     })
     .then((response)=> {
       if(response.data.message)
-        alert(response.data.message)
+        alert(response.data.message)  // Show success message if any
       else{
-        this.toggle();
+        this.toggle(); // Close modal
+        // Reset input fields and loading state
         this.setState({
           username:null,
           name:null,
@@ -54,6 +57,7 @@ class AddUser extends React.Component {
     });
     
   }
+  // Method to toggle modal visibility
   toggle() {
     this.setState({
       modal: !this.state.modal

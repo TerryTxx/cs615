@@ -5,7 +5,9 @@ import Story from './story'
 import AddStory from './forms/addStory';
 import Loader from './loader'
 import Header from './common/header'
-
+/*
+  * This part of the code is inspired and designed by https://monday.com/.
+  */
 class Dashboard extends Component{
   constructor(props, context) {
     super(props, context);
@@ -22,16 +24,15 @@ class Dashboard extends Component{
 
     this.getData = this.getData.bind(this)
   }
-// Load story details and task data when the component mounts
+    // Fetch story details from the server
   componentDidMount = ()=>{
     this.getStoryDetails();
     this.getData();
-    // Refresh task data periodically
     setInterval(() => {
       this.getData();
   }, 2000);
   }
-// Function to fetch story details from the server
+
   getStoryDetails = () => {
     axios.get(`/story`)
     .then((r)=> {
@@ -53,11 +54,11 @@ class Dashboard extends Component{
     })
 
   }
-  // Function to fetch task data from the server
+    // Fetch task data from the server
   getData = () => {
-      const token = localStorage.getItem('token'); // Get token from local storage
+      const token = localStorage.getItem('token'); // 从本地存储获取 token
       const headers = {
-          Authorization: `Bearer ${token}` // Set Authorization header
+          Authorization: `Bearer ${token}` // 设置 Authorization 头部
       };
 
       axios.get(`/tasks`,{headers})
@@ -91,7 +92,6 @@ class Dashboard extends Component{
     render(){
       let {stories,loadingStory} = this.state;
       let storyTable;
-      // Render story list
       if(!loadingStory)
       storyTable = stories.map((story,index)=>{
         return(
@@ -112,7 +112,7 @@ class Dashboard extends Component{
         return(
             <div>
               <div className="side">
-                <span className="logo">CS615 Group2</span>
+                <span className="logo">G2-TaskHanlder</span>
                 <ul className="side-menu">
                   {storyTable}
                 </ul>
@@ -123,7 +123,10 @@ class Dashboard extends Component{
               <div className="con">
                 <Header/>
                   <aside>
-                      <Story storyName={this.state.stories.filter(i=>i.storyId===parseInt(this.props.router.params.id))} storyType={this.props.params.id} tasks={this.state.tasks} loading={this.state.loading}/>
+                      <Story storyName={this.state.stories.filter(i=>i.storyId===parseInt(this.props.router.params.id))}
+                             storyType={this.props.params.id}
+                             tasks={this.state.tasks}
+                             loading={this.state.loading}/>
                   </aside>
 
               </div>

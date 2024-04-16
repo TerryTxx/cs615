@@ -1,52 +1,43 @@
-const mongoose = require('mongoose');
+const mongoose =require('mongoose');
 const Schema = mongoose.Schema;
-
-// Define the Task schema with default values and validation
+// Define the schema for the Task collection
 const TaskSchema = new Schema({
-    title: {
-        type: String,
-        default: 'No Title',
-        trim: true // Added trim option to remove whitespace
+    title:{
+        type:String,
+        default:'No Title'
     },
-    content: {
-        type: String,
-        default: 'No Content',
-        trim: true // Added trim option to remove whitespace
+    content:{
+        type:String,
+        default:'No Content'
     },
-    date: {
-        type: Date,
-        default: Date.now // Automatically set to the current date
+    date:{
+        type:Date,
+        default:Date.now
     },
-    contributors: {
-        type: [Schema.Types.ObjectId], // Changed to an array to allow multiple contributors
-        required: true,
-        ref: 'User' // Added reference to the User model
+    contributors:{
+        type:Schema.Types.ObjectId, //dont forget that!
+        required:true
     },
-    status: {
-        type: Number,
-        required: true,
-        enum: [0, 1, 2, 3] // Assuming these are the valid statuses, replace with actual values
+    status:{
+        type:Number,
+        required:true
     },
-    createdBy: {
-        type: Schema.Types.ObjectId, // Changed type to ObjectId for referencing User model
-        required: true,
-        ref: 'User' // Added reference to the User model
+    createdBy:{
+        type:String,
+        required:true
     },
-    dueDate: {
-        type: Date,
-        default: Date.now // Automatically set to the current date
+	dueDate:{
+		type:Date,
+        default:Date.now
     },
-    color: {
-        type: String,
-        default: "#2196f3",
-        match: [/^#([0-9a-f]{3}){1,2}$/i, 'Please fill a valid hex color'] // Added validation for hex color
+    color:{
+        type:String,
+        default:"#2196f3"
     },
-    storyId: {
-        type: Number,
-        required: true,
-        unique: true // Ensured storyId is unique
+    storyId:{
+        type:Number,
+        required:true
     }
-});
-
-// Export the Task model
-module.exports = mongoose.model('Task', TaskSchema);
+})
+// Export the mongoose model for the Task collection
+module.exports = mongoose.model('task',TaskSchema);

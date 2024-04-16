@@ -1,12 +1,14 @@
 import React,{Component} from 'react'
 import moment from 'moment'
-import ModalExampleDimmer from './modal'
+import ModalExampleDimmer from './modal' // Importing ModalExampleDimmer component
 import axios from 'axios'
 import $ from 'jquery'
 import 'jquery-ui-dist/jquery-ui';
 import Loader from './loader';
 class Task extends Component{
+    // Lifecycle method to handle when component receives new props
   componentWillReceiveProps(){
+      // Make ".mcell-task" elements draggable
   
     $(".mcell-task").draggable({
       appendTo: "body",
@@ -14,7 +16,7 @@ class Task extends Component{
       helper: 'clone',
       revert: "invalid"
   });
-  
+      // Make ".mcell" elements droppable
   $(".mcell").droppable({
       tolerance: "intersect",
       accept: ".mcell-task",
@@ -26,6 +28,8 @@ class Task extends Component{
       }
   });
   }
+
+    // API call to delete a task
 api = id => {
   axios.delete('/tasks/delete/'+id)
   .then(function (response) {
@@ -44,12 +48,14 @@ api = id => {
   render(){
     const {tasks,loading,filter} = this.props;
       let content;
+      // Display loader while loading
       if (loading) {
         content = <div className="loader">
          <Loader/>
           </div>;
       }
       else{
+          // Render tasks
         content = 
         tasks.filter(i=>i.status===Number(filter))
         .map((i,index)=>{

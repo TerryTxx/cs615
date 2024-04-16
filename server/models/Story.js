@@ -1,29 +1,22 @@
-const mongoose = require('mongoose');
+const mongoose =require('mongoose');
+// Define the schema for the Story collection
 const Schema = mongoose.Schema;
-
-// Define the Story schema with validation and default values
 const StorySchema = new Schema({
-    title: {
-        type: String,
-        maxlength: [30, 'Title cannot exceed 30 characters'], // Added validation message for maxlength
-        required: [true, 'Title is required'], // Made title a required field
-        trim: true // Added trim option to remove whitespace
+    title:{
+        type:String,
+        maxlength:30
     },
-    createdBy: {
-        type: Schema.Types.ObjectId, // Changed type to ObjectId for referencing User model
-        required: [true, 'Creator ID is required'], // Made createdBy a required field
-        ref: 'User' // Added reference to the User model
+    createdBy:{
+        type:String,
     },
-    storyId: {
-        type: Number,
-        required: [true, 'Story ID is required'],
-        unique: true // Ensured storyId is unique
+    storyId:{
+        type:Number,
+        required:true
     },
-    createdDate: {
-        type: Date,
-        default: Date.now // Automatically set to the current date
+    createdDate:{
+        type:Date,
+        default:Date.now
     }
-});
-
-// Export the Story model
-module.exports = mongoose.model('Story', StorySchema);
+})
+// Export the mongoose model for the Story collection
+module.exports = mongoose.model('story',StorySchema);
