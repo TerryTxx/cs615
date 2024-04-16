@@ -5,15 +5,17 @@ import axios from 'axios'
 class AddStory extends React.Component {
   constructor(props) {
     super(props);
+    // Initialize component state
     this.state = {
       modal: false,
-      title:'',
-      createdBy:'',
-      count:2
+      title:'', // State for story title
+      createdBy:'', // State for created by
+      count:2 // Default story count
     };
-
+    // Bind toggle method
     this.toggle = this.toggle.bind(this);
   }
+  // Handle input change
   handleChange = event => {
     this.setState({ name: event.target.value });
   }
@@ -23,12 +25,12 @@ class AddStory extends React.Component {
      })
      console.log(this.state.dueDate)
 }
-
+  // Retrieve story count from server
 getStoryCount = () => {
   axios.get(`/story/count`)
   .then((r)=> {
       this.setState({
-          count: r.data.count,
+          count: r.data.count, // Update story count state
           err:''
       })
   })
@@ -38,23 +40,26 @@ getStoryCount = () => {
       })
   })
 }
+  // Handle click event for adding a story
   handleClick = event => {
-    const token = localStorage.getItem('token'); // 从本地存储获取 token
+    const token = localStorage.getItem('token'); // Retrieve token from local storage
     const headers = {
-      Authorization: `Bearer ${token}` // 设置 Authorization 头部
+      Authorization: `Bearer ${token}`  // Set Authorization header
     };
-
+    // Retrieve story count
     this.getStoryCount()
+    // Make POST request to add a story
     axios.post('/story', {
-      title:this.state.title,
-      createdBy:this.state.createdBy,
-      storyId:this.state.count
+      title:this.state.title, // Story title
+      createdBy:this.state.createdBy, // Created by
+      storyId:this.state.count // Story ID
     },{headers})
     .then((response)=> {
       if(response.data.error)
-        alert(response.data.error)
+        alert(response.data.error) // Show error message if any
       else{
-        this.toggle();
+        this.toggle(); // Close modal
+        // Reset input fields and loading state
         this.setState({
           title:null,
           createdBy:null,
@@ -68,6 +73,7 @@ getStoryCount = () => {
       console.log(error);
     });
   }
+  // Toggle modal visibility
   toggle() {
     this.setState({
       modal: !this.state.modal

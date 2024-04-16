@@ -1,18 +1,20 @@
 import $ from 'jquery'
 import 'jquery-ui-dist/jquery-ui';
+// Make ".mcell-task" elements draggable
 $(".mcell-task").draggable({
-  appendTo: "body", // Append the dragged element to the body
-  cursor: "move", // Set cursor style to move while dragging
-  helper: 'clone', // Clone the dragged element
-  revert: "invalid" // Revert the dragged element if not dropped on a valid droppable target
-
+  appendTo: "body", // Append the helper to the body
+  cursor: "move", // Set the cursor to move while dragging
+  helper: 'clone', // Use a clone of the element as helper
+  revert: "invalid" // Revert the draggable element if dropped outside a droppable
 });
+// Make ".mcell" elements droppable
 $(".mcell").droppable({
-  tolerance: "intersect", // Define the tolerance for dropping elements
-  accept: ".mcell-task",// Specify the draggable elements accepted by this droppable
-  activeClass: "ui-state-default", // CSS class applied when an accepted element is dragged over
-  hoverClass: "ui-state-hover", // CSS class applied when an accepted element is hovered over
-  drop: function(event, ui) {        
-      $(this).append($(ui.draggable)); // Append the dragged element to the droppable element
+  tolerance: "intersect", // The draggable overlaps the droppable at least 50%
+  accept: ".mcell-task", // Only accept ".mcell-task" elements as droppable
+  activeClass: "ui-state-default", // Class to be added to the droppable when an accepted draggable is being dragged
+  hoverClass: "ui-state-hover", // Class to be added to the droppable when an accepted draggable is hovered over it
+  drop: function(event, ui) {
+    // Append the dropped draggable to the droppable
+      $(this).append($(ui.draggable));
   }
 });

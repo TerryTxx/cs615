@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
-import {Link} from 'react-router'
-import AddUser from '../forms/addUser'
+import {Link} from 'react-router' // Importing Link component
+import AddUser from '../forms/addUser' // Importing AddUser component
 
 class Header extends Component{
     render(){

@@ -1,29 +1,24 @@
-// Importing the required modules
-const mongoose = require('mongoose');
-
-// Creating a new schema
+const mongoose =require('mongoose');
 const Schema = mongoose.Schema;
-
-// Defining the User schema
+// Define the schema for the User collection
 const UserSchema = new Schema({
-    username: {
-        type: String,
-        unique: [true, "Please use a different username"], // Ensuring the username is unique
+    username:{
+        type:String,
+        unique:[true,"Please different username"]
     },
-    name: String, // User's first name
-    lastName: String, // User's last name
-    public: {
-        type: Boolean, // Public profile status
+    name:String,
+    lastName:String,
+    public:{
+        type:Boolean,
     },
-    profilePhoto: {
-        type: String,
-        default: 'default.jpg' // Default profile photo
+    profilePhoto:{
+        type:String,
+        default:'default.jpg'
     },
-    createdDate: {
-        type: Date,
-        default: Date.now // Setting the default date to the current date
+    createdDate:{
+        type:Date,
+        default:Date.now
     }
-});
-
-// Exporting the User model
-module.exports = mongoose.model('User', UserSchema);
+})
+// Export the mongoose model for the User collection
+module.exports = mongoose.model('user',UserSchema);

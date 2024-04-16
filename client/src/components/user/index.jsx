@@ -13,32 +13,40 @@ class LoginForm extends Component {
     constructor(props) {
         console.log(props)
         super(props);
+        // Initialize state to manage the display of login and sign-up forms
         this.state = {
             showSignUp: false
         };
     }
-
+    // Method to handle user login
     handleLogin = async (credentials) => {
         console.log('Login Credentials:', credentials);
         try {
+            // Send login request to the server
             const response = await axios.post('/scrumuser/login', credentials);
+            // Store the token in local storage
             localStorage.setItem('token', response.data.token);
+            // Redirect the user to the dashboard after successful login
             this.props.router.push('/story/1');
         } catch (error) {
+            // Log and handle login errors
             console.error('Login Error:', error.response ? error.response.data : error.message);
         }
     };
-
+    // Method to handle user sign-up
     handleSignUp = async (credentials) => {
         console.log('SignUp Credentials:', credentials);
         try {
+            // Send sign-up request to the server
             const response = await axios.post('/scrumuser/register', credentials);
+            // Toggle to display the login form after successful sign-up
             this.toggleForm()
         } catch (error) {
+            // Log and handle registration errors
             console.error('Registration Error:', error.response ? error.response.data : error.message);
         }
     };
-
+    // Method to toggle between login and sign-up forms
     toggleForm = () => {
         this.setState(prevState => ({
             showSignUp: !prevState.showSignUp

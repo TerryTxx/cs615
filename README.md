@@ -16,22 +16,36 @@ Open command line and apply that steps:
     nvm install v16.14.2
     nvm use v16.14.2
     
-  for mac use curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  for mac install nvm curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   nvm use 16
   or nvm install v16.14.2
 
-3. Step
+3. Step for mac (global script setted, windows go Step4)
 npm run install-deps
+(if failed) go Step 4
 npm start
+
+4. Step
+ cd server
+ npm install
+ npm run start
+ 
+ cd client
+ npm install
+ npm run start
  
 4. Step
  You can start working on any explorer window.
+ 
+ Account:admin
+ Password:12345
+ 
+register is working also
 ```
-
+http://localhost:3001/
 
 HTTP Request
-----------
-http://localhost:3001/
+-----------
 
 | Route | HTTP Verb	 | POST body	                                                                                                                                                | Description	 |
 | --- | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------| --- |

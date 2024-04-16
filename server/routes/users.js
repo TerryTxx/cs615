@@ -1,39 +1,41 @@
 const express = require('express');
 const router = express.Router();
+
 const User = require('../models/User');
 
-// Endpoint to create a new user
+// Create a new user
 router.post('/', async (req, res, next) => {
   try {
     const user = new User(req.body);
     const data = await user.save();
-    res.status(201).json(data); // Send a 201 status code for resource creation
+    res.json(data);
   } catch (err) {
-    next({ message: 'User creation failed', code: '0', error: err });
+    // Pass error to middleware
+    next({ message: 'User creation failed', code: '0' });
   }
 });
 
-// Endpoint to retrieve all users
+// Get all users
 router.get('/', async (req, res, next) => {
   try {
-    const users = await User.find({});
-    if (!users.length) {
-      return res.status(404).json({ message: 'No users found', code: 5 }); // Send a 404 status code when no users are found
+    const data = await User.find({});
+    if (!data || data.length === 0) {
+      return next({ message: 'No users found', code: 5 });
     }
-    res.json(users);
+    res.json(data);
   } catch (err) {
     next(err);
   }
 });
 
-// Endpoint to delete a user by ID
+// Delete a user
 router.delete('/delete/:id', async (req, res, next) => {
   try {
     const result = await User.findByIdAndRemove(req.params.id);
     if (!result) {
-      return res.status(404).json({ message: 'User not found', status: '0' }); // Send a 404 status code when the user is not found
+      return res.json({ status: '0' }); // 如果用户已被删除，则返回0
     }
-    res.json({ message: 'User deleted successfully', status: '1' }); // Include a success message upon deletion
+    res.json({ status: '1' });
   } catch (err) {
     next(err);
   }

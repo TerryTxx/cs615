@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const authenticateToken = require('../jwt');
+const authenticateToken = require('../jwt')
+
 const Story = require('../models/Story');
 
-// Get the count of stories by status
+// Get the count of stories for different statuses
 router.get('/count', async (req, res, next) => {
   try {
     const count = await Story.aggregate([
       {
         $group: {
           _id: '$status',
-          count: { $sum: 1 }
+          count: {$sum: 1}
         }
       }
     ]);
@@ -21,17 +22,17 @@ router.get('/count', async (req, res, next) => {
 });
 
 // Create a new story
-router.post('/', authenticateToken, async (req, res, next) => {
+router.post('/',authenticateToken, async (req, res, next) => {
   try {
     const story = new Story({
       ...req.body,
       createdBy: req.user.id
     });
     const data = await story.save();
-    res.status(201).json(data);
+    res.json(data);
   } catch (err) {
-    console.error(err); // Changed to console.error for better error logging
-    next({ message: 'Error creating story', code: '0' }); // More descriptive error message
+    console.log(err)
+    next({message: 'Story not found', code: '0'});
   }
 });
 
@@ -40,7 +41,7 @@ router.get('/', async (req, res, next) => {
   try {
     const data = await Story.find({});
     if (!data || data.length === 0) {
-      return next({ message: 'No stories available', code: 5 }); // More descriptive message
+      return next({message: 'no data', code: 5});
     }
     res.json(data);
   } catch (err) {
@@ -48,14 +49,14 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// Delete a story by ID
+// Delete a story
 router.delete('/delete/:id', async (req, res, next) => {
   try {
     const result = await Story.findByIdAndRemove(req.params.id);
     if (!result) {
-      return res.status(404).json({ message: 'Story not found' }); // Changed to 404 status with a descriptive message
+      return res.json({status: '0'}); // Return 0 if already deleted
     }
-    res.status(200).json({ message: 'Story deleted successfully' }); // Added success message
+    res.json({status: '1'});
   } catch (err) {
     next(err);
   }

@@ -1,17 +1,18 @@
 import React,{Component} from 'react';
 import { Tooltip } from 'reactstrap';
-import AddTask from './forms/addTask';
+import AddTask from './forms/addTask'; // Importing AddTask component
 
 class Tooltips extends Component {
   constructor(props) {
     super(props);
-
+    // Initialize state
     this.toggle = this.toggle.bind(this);
+    // Bind toggle method
     this.state = {
       tooltipOpen: false
     };
   }
-
+  // Toggle tooltip visibility
   toggle() {
     this.setState({
       tooltipOpen: !this.state.tooltipOpen
@@ -26,7 +27,7 @@ class Tooltips extends Component {
           {this.props.content}
         </Tooltip>
         
-        <AddTask storyType={this.props.storyType} status={this.props.id}/> //storyType
+        <AddTask storyType={this.props.storyType} status={this.props.id}/>
       </span>
     );
   }
