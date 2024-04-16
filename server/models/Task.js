@@ -15,7 +15,11 @@ const TaskSchema = new Schema({
         default:Date.now
     },
     contributors:{
+<<<<<<< Updated upstream
         type:Schema.Types.ObjectId, //dont forget that!
+=======
+        type:Schema.Types.ObjectId,
+>>>>>>> Stashed changes
         required:true
     },
     status:{
@@ -26,8 +30,13 @@ const TaskSchema = new Schema({
         type:String,
         required:true
     },
+<<<<<<< Updated upstream
 	dueDate:{
 		type:Date,
+=======
+    dueDate:{
+        type:Date,
+>>>>>>> Stashed changes
         default:Date.now
     },
     color:{
@@ -39,5 +48,10 @@ const TaskSchema = new Schema({
         required:true
     }
 })
+<<<<<<< Updated upstream
 // Export the mongoose model for the Task collection
 module.exports = mongoose.model('task',TaskSchema);
+=======
+
+module.exports = mongoose.model('task',TaskSchema);
+>>>>>>> Stashed changes

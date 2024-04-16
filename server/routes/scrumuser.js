@@ -8,7 +8,13 @@ const SECRET_KEY = "your_secret_key";
 router.post('/register', async (req, res) => {
     try {
         const { fullName, username, password, email } = req.body;
+<<<<<<< Updated upstream
         // Create a new user instance
+=======
+        // Hash the password before saving
+        // const hashedPassword = await bcrypt.hash(password, 8);
+
+>>>>>>> Stashed changes
         const newUser = new User({
             fullName,
             username,

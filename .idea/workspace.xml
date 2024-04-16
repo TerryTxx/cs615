@@ -6,6 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="4e302e4a-60f6-4f19-985d-382b8ab2af24" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
+=======
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/addStory.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/addStory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/addTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/addTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/addUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/addUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/BackgroundSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/BackgroundSlider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/server/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/jwt.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/jwt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/ScrumUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/ScrumUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Story.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Story.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/scrumuser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/scrumuser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/story.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/story.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +61,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -58,6 +80,26 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mac/Downloads/Scrum-Task-Management-with-ReactJS-Express-Server-master/client/src/components/user&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start (1).executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> Stashed changes
   }
 }]]></component>
   <component name="RecentsManager">
@@ -66,6 +108,16 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.start (1)">
+    <configuration name="install-deps" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="install-deps" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -88,6 +140,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.install-deps" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
       </list>
@@ -124,7 +177,12 @@
       <workItem from="1713112251092" duration="332000" />
       <workItem from="1713115527109" duration="197000" />
       <workItem from="1713117506696" duration="912000" />
+<<<<<<< Updated upstream
       <workItem from="1713296762435" duration="57000" />
+=======
+      <workItem from="1713260926351" duration="6377000" />
+      <workItem from="1713284104329" duration="548000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

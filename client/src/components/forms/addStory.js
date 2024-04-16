@@ -8,9 +8,15 @@ class AddStory extends React.Component {
     // Initialize component state
     this.state = {
       modal: false,
+<<<<<<< Updated upstream
       title:'', // State for story title
       createdBy:'', // State for created by
       count:2 // Default story count
+=======
+      title:'',
+      createdBy:'',
+      count:2 // Initial count for story ID
+>>>>>>> Stashed changes
     };
     // Bind toggle method
     this.toggle = this.toggle.bind(this);
@@ -19,13 +25,19 @@ class AddStory extends React.Component {
   handleChange = event => {
     this.setState({ name: event.target.value });
   }
+  // Function to handle input changes
   handleInput(e) {
      this.setState({
       [e.target.name]: e.target.value
      })
      console.log(this.state.dueDate)
 }
+<<<<<<< Updated upstream
   // Retrieve story count from server
+=======
+
+// Function to get the count of stories
+>>>>>>> Stashed changes
 getStoryCount = () => {
   axios.get(`/story/count`)
   .then((r)=> {
@@ -40,6 +52,7 @@ getStoryCount = () => {
       })
   })
 }
+<<<<<<< Updated upstream
   // Handle click event for adding a story
   handleClick = event => {
     const token = localStorage.getItem('token'); // Retrieve token from local storage
@@ -53,6 +66,21 @@ getStoryCount = () => {
       title:this.state.title, // Story title
       createdBy:this.state.createdBy, // Created by
       storyId:this.state.count // Story ID
+=======
+
+// Function to handle the button click event
+  handleClick = event => {
+    const token = localStorage.getItem('token'); // Get token from local storage
+    const headers = {
+      Authorization: `Bearer ${token}` // Set Authorization header
+    };
+
+    this.getStoryCount() // Get the story count before making the post request
+    axios.post('/story', {
+      title:this.state.title,
+      createdBy:this.state.createdBy,
+      storyId:this.state.count // Pass the current count as the story ID
+>>>>>>> Stashed changes
     },{headers})
     .then((response)=> {
       if(response.data.error)
@@ -73,7 +101,12 @@ getStoryCount = () => {
       console.log(error);
     });
   }
+<<<<<<< Updated upstream
   // Toggle modal visibility
+=======
+
+  // Function to toggle the modal
+>>>>>>> Stashed changes
   toggle() {
     this.setState({
       modal: !this.state.modal

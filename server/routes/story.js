@@ -54,7 +54,11 @@ router.delete('/delete/:id', async (req, res, next) => {
   try {
     const result = await Story.findByIdAndRemove(req.params.id);
     if (!result) {
+<<<<<<< Updated upstream
       return res.json({status: '0'}); // Return 0 if already deleted
+=======
+      return res.json({status: '0'}); // If deleted, return 0
+>>>>>>> Stashed changes
     }
     res.json({status: '1'});
   } catch (err) {

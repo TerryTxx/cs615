@@ -27,5 +27,12 @@ const ScrumUserSchema = new Schema({
         default: Date.now
     }
 });
+<<<<<<< Updated upstream
 // Export the mongoose model for the ScrumUser collection
 module.exports = mongoose.model('ScrumUser', ScrumUserSchema);
+=======
+
+
+// Export the model for the ScrumUser collection
+module.exports = mongoose.model('ScrumUser', ScrumUserSchema);
+>>>>>>> Stashed changes

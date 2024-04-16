@@ -20,5 +20,9 @@ const UserSchema = new Schema({
         default:Date.now
     }
 })
+<<<<<<< Updated upstream
 // Export the mongoose model for the User collection
+=======
+// Export the model for the User collection
+>>>>>>> Stashed changes
 module.exports = mongoose.model('user',UserSchema);

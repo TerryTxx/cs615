@@ -22,7 +22,11 @@ Open command line and apply that steps:
 
 3. Step for mac (global script setted, windows go Step4)
 npm run install-deps
+<<<<<<< Updated upstream
 (if failed) go Step 4
+=======
+(if failed) root npm install && (cd client && npm install) && (cd server && npm install)
+>>>>>>> Stashed changes
 npm start
 
 4. Step
@@ -35,6 +39,7 @@ npm start
  npm run start
  
 4. Step
+
  You can start working on any explorer window.
  
  Account:admin

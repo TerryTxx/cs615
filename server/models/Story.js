@@ -18,5 +18,9 @@ const StorySchema = new Schema({
         default:Date.now
     }
 })
+<<<<<<< Updated upstream
 // Export the mongoose model for the Story collection
+=======
+
+>>>>>>> Stashed changes
 module.exports = mongoose.model('story',StorySchema);

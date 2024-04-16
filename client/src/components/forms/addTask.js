@@ -13,7 +13,7 @@ class AddModal extends React.Component {
       title:'',
       content:'',
       contributors:'',
-      createdBy:'643ad95561e62835738acf4e',
+      createdBy:'643ad95561e62835738acf4e',//demo of mongodb account
       dueDate:'',
       status:this.props.status,
       color:'',
@@ -25,9 +25,17 @@ class AddModal extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
   componentDidMount(){
+<<<<<<< Updated upstream
     moment.locale('tr'); // Set moment locale to Turkish
     this.changeColumnTitle() // Fetch users from the server
   }
+=======
+    moment.locale('tr');// Set locale to Turkish
+    this.changeColumnTitle()// Call function to set initial column title
+  }
+    // Function to set locale and initial column title based on status
+
+>>>>>>> Stashed changes
   changeColumnTitle = number=>{
     let newTitle;
     if(number==="1")
@@ -138,7 +146,7 @@ getUsers(){
           <Input type="textarea" name="content" id="content" onChange={this.handleInput.bind(this)}/>
         </FormGroup>
         <FormGroup>
-            <Label for="contributors">Assign to:</Label>
+            <Label for="contributors">Assign to(*):</Label>
             <Input type="select" name="contributors" id="contributors" onChange={this.handleInput.bind(this)}>
                 <option value="">Choose:</option>
                 {userContent}
